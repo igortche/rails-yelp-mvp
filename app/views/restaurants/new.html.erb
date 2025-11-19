@@ -1,0 +1,18 @@
+
+
+<div class="container d-flex flex-column align-items-center">
+  <h1>Create a Restaurant</h1>
+  <%= link_to 'Back to List', restaurants_path, class: 'btn btn-secondary text-white mb-3' %>
+
+  <div class="col-12 col-sm-6 col-md-3 mb-3 d-flex flex-column gap-4 w-100 p-3">
+    <div class="mt-4 w-20">
+      <%= simple_form_for(@restaurant) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :phone_number %>
+        <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], prompt: "Choisir une catégorie" %>
+        <%= f.submit class: 'btn btn-primary w-100' %>
+      <% end %>
+    </div>
+  </div>
+</div>
